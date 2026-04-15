@@ -11,7 +11,7 @@ from database.base import Base
 # Цей блок виконується ТІЛЬКИ для IDE та лінтерів. 
 # Під час реального запуску FastAPI Python ігнорує його.
 if TYPE_CHECKING:
-    from apps.models import Item
+    from apps.items.models import Item
 
 class User(Base):
     __tablename__ = "users"

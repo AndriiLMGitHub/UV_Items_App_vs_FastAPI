@@ -3,9 +3,9 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from apps.errors_handlers import item_not_found_exception_handler
-from apps.exceptions import ItemNotFoundError
-from apps.routes import router as items_router
+from apps.items.errors_handlers import item_not_found_exception_handler
+from apps.items.exceptions import ItemNotFoundError
+from apps.items.routes import router as items_router
 from apps.user.routes import router as users_router
 
 @asynccontextmanager

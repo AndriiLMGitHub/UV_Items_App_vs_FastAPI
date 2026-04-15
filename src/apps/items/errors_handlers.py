@@ -1,7 +1,7 @@
 # error_handlers.py
 from fastapi import Request
 from fastapi.responses import JSONResponse
-from apps.exceptions import ItemNotFoundError
+from apps.items.exceptions import ItemNotFoundError
 
 async def item_not_found_exception_handler(request: Request, exc: ItemNotFoundError):
     return JSONResponse(

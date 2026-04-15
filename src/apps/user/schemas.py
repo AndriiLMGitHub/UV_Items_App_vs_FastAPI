@@ -1,7 +1,7 @@
 from typing import List, Optional
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict
-from apps.schemas import Item  # Імпортуємо схему Item, щоб включити її у UserSchema
+from apps.items.schemas import Item  # Імпортуємо схему Item, щоб включити її у UserSchema
 
 # 2. Базова схема (поля, які є скрізь)
 class UserBase(BaseModel):

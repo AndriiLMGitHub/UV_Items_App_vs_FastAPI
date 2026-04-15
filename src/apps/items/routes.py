@@ -2,8 +2,8 @@ from typing import Annotated
 
 from fastapi import APIRouter, Depends
 
-from apps.schemas import ItemCreate, ItemResponse, ListItemResponse
-from apps.services import create_item, delete_item, get_all_items, get_item_by_id
+from apps.items.schemas import ItemCreate, ItemResponse, ListItemResponse
+from apps.items.services import create_item, delete_item, get_all_items, get_item_by_id
 from database.dependencies import SessionDependency
 
 router = APIRouter(

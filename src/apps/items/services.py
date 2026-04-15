@@ -1,8 +1,8 @@
 from sqlalchemy import select
 
-from apps.exceptions import ItemNotFoundError
-from apps.models import Item
-from apps.schemas import ItemCreate
+from apps.items.exceptions import ItemNotFoundError
+from apps.items.models import Item
+from apps.items.schemas import ItemCreate
 from database.dependencies import SessionDependency
 
 
