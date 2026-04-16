@@ -1,4 +1,5 @@
 from sqlalchemy import select
+from sqlalchemy.orm import selectinload
 
 from apps.user.models import User
 from apps.user.schemas import UserCreate
@@ -6,13 +7,9 @@ from database.dependencies import SessionDependency
 
 
 async def get_all_users_service(session: SessionDependency):
-   # 1. Формуємо правильний запит до моделі
-    stmt = select(User)
-    
-    # 2. Виконуємо запит
+   
+    stmt = select(User).options(selectinload(User.items))
     result = await session.execute(stmt)
-    
-    # 3. Витягуємо сутності і одразу матеріалізуємо їх у список (list)
     users = result.scalars().all()
 
     return users
