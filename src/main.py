@@ -17,12 +17,14 @@ async def lifespan(app: FastAPI):
     print("Shutting down the application...")
 
 
-app = FastAPI(\
+app = FastAPI(
     title="My FastAPI Application",
     description="This is a sample FastAPI application with lifespan events.",
     version="1.0.0",
-    lifespan=lifespan
-    )
+    lifespan=lifespan,
+    docs_url="/",
+    redoc_url="/redoc",
+)
 
 # Реєстрація глобальних обробників помилок
 app.add_exception_handler(ItemNotFoundError, item_not_found_exception_handler)
